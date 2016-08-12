@@ -1,0 +1,1 @@
+package com.getgo.cloudtower.dao;import org.sql2o.Sql2o;/** * Created by amirnashat on 8/2/16. */public abstract class DefaultDAO {	public static final Sql2o connection;	static {		connection = new Sql2o("jdbc:mysql://localhost:3306/Cloudtower2?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC","root",null);	}}

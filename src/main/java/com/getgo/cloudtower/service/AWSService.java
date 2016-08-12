@@ -1,0 +1,1 @@
+package com.getgo.cloudtower.service;import java.util.List;/** * Created by amirnashat on 7/29/16. */public interface AWSService {	public void process();	public List retrieve();}
