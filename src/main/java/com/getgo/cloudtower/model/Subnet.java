@@ -16,7 +16,7 @@ public class Subnet {
         if (getId() != null ? !getId().equals(subnet.getId()) : subnet.getId() != null) return false;
         if (getAccountId() != null ? !getAccountId().equals(subnet.getAccountId()) : subnet.getAccountId() != null)
             return false;
-        if (getRegionId() != null ? !getRegionId().equals(subnet.getRegionId()) : subnet.getRegionId() != null)
+        if (getRegionName() != null ? !getRegionName().equals(subnet.getRegionName()) : subnet.getRegionName() != null)
             return false;
         if (getVpcName() != null ? !getVpcName().equals(subnet.getVpcName()) : subnet.getVpcName() != null)
             return false;
@@ -34,7 +34,7 @@ public class Subnet {
     public int hashCode() {
         int result = getId() != null ? getId().hashCode() : 0;
         result = 31 * result + (getAccountId() != null ? getAccountId().hashCode() : 0);
-        result = 31 * result + (getRegionId() != null ? getRegionId().hashCode() : 0);
+        result = 31 * result + (getRegionName() != null ? getRegionName().hashCode() : 0);
         result = 31 * result + (getVpcName() != null ? getVpcName().hashCode() : 0);
         result = 31 * result + (getVpcId() != null ? getVpcId().hashCode() : 0);
         result = 31 * result + (getSubnetName() != null ? getSubnetName().hashCode() : 0);
@@ -46,7 +46,7 @@ public class Subnet {
 
     private Integer id;
     private Integer accountId;
-    private Integer regionId;
+    private String regionName;
     private String vpcName;
     private String vpcId;
     private String subnetName;
@@ -54,12 +54,12 @@ public class Subnet {
     private String cidrBlock;
     private Integer ipCount;
 
-    public Integer getRegionId() {
-        return regionId;
+    public String getRegionName() {
+        return regionName;
     }
 
-    public void setRegionId(Integer regionId) {
-        this.regionId = regionId;
+    public void setRegionName(String regionName) {
+        this.regionName = regionName;
     }
 
     public String getVpcName() {
