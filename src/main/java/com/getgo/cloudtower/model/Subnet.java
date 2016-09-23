@@ -6,12 +6,29 @@ package com.getgo.cloudtower.model;
 public class Subnet {
 
 
+    private Integer id;
+    private Integer accountId;
+    private String regionName;
+    private String vpcName;
+    private String vpcId;
+    private String subnetName;
+    private String awsSubnetId;
+    private String cidrBlock;
+    private Integer ipCount;
+    private String availabilityZone;
+
+
+    @Override
+    public String toString() {
+        return "Subnet{" + "id=" + id + ", accountId=" + accountId + ", regionName='" + regionName + '\'' + ", vpcName='" + vpcName + '\'' + ", vpcId='" + vpcId + '\'' + ", subnetName='" + subnetName + '\'' + ", awsSubnetId='" + awsSubnetId + '\'' + ", cidrBlock='" + cidrBlock + '\'' + ", ipCount=" + ipCount + ", availabilityZone='" + availabilityZone + '\'' + '}';
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof com.getgo.cloudtower.model.Subnet)) return false;
+        if (!(o instanceof Subnet)) return false;
 
-        com.getgo.cloudtower.model.Subnet subnet = (com.getgo.cloudtower.model.Subnet) o;
+        Subnet subnet = (Subnet) o;
 
         if (getId() != null ? !getId().equals(subnet.getId()) : subnet.getId() != null) return false;
         if (getAccountId() != null ? !getAccountId().equals(subnet.getAccountId()) : subnet.getAccountId() != null)
@@ -27,7 +44,10 @@ public class Subnet {
             return false;
         if (getCidrBlock() != null ? !getCidrBlock().equals(subnet.getCidrBlock()) : subnet.getCidrBlock() != null)
             return false;
-        return (getIpCount() != null ? !getIpCount().equals(subnet.getIpCount()) : subnet.getIpCount() != null);
+        if (getIpCount() != null ? !getIpCount().equals(subnet.getIpCount()) : subnet.getIpCount() != null)
+            return false;
+        return getAvailabilityZone() != null ? getAvailabilityZone().equals(subnet.getAvailabilityZone()) : subnet.getAvailabilityZone() == null;
+
     }
 
     @Override
@@ -41,18 +61,17 @@ public class Subnet {
         result = 31 * result + (getAwsSubnetId() != null ? getAwsSubnetId().hashCode() : 0);
         result = 31 * result + (getCidrBlock() != null ? getCidrBlock().hashCode() : 0);
         result = 31 * result + (getIpCount() != null ? getIpCount().hashCode() : 0);
+        result = 31 * result + (getAvailabilityZone() != null ? getAvailabilityZone().hashCode() : 0);
         return result;
     }
 
-    private Integer id;
-    private Integer accountId;
-    private String regionName;
-    private String vpcName;
-    private String vpcId;
-    private String subnetName;
-    private String awsSubnetId;
-    private String cidrBlock;
-    private Integer ipCount;
+    public String getAvailabilityZone() {
+        return availabilityZone;
+    }
+
+    public void setAvailabilityZone(String availabilityZone) {
+        this.availabilityZone = availabilityZone;
+    }
 
     public String getRegionName() {
         return regionName;
