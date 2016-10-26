@@ -118,6 +118,10 @@
             <groupId>com.amazonaws</groupId>
             <artifactId>aws-java-sdk-lambda</artifactId>
         </dependency>
+        <dependency>
+            <groupId>com.amazonaws</groupId>
+            <artifactId>aws-java-sdk-acm</artifactId>
+        </dependency>
 
         <!-- SPARK -->
         <dependency>
@@ -213,4 +217,11 @@
         </dependency>
 
     </dependencies>
+
+
+
+
+
+
+
 </project>
